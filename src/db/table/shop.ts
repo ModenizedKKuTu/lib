@@ -5,7 +5,8 @@ export default function define (db: sequelize) {
 
   Shop.init({
     id: {
-      type: DataTypes.STRING(64)
+      type: DataTypes.STRING(64),
+      primaryKey: true
     },
     cost: {
       type: DataTypes.INTEGER(),

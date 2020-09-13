@@ -26,6 +26,29 @@ export default function db (options: {
 
   const tables = {
     User: beforeInitTables.user(db),
-    Shop: beforeInitTables.shop(db)
+
+    Shop: beforeInitTables.shop(db),
+    ShopDesc: beforeInitTables.shopDesc(db),
+
+    WordKo: beforeInitTables.wordKo(db),
+    WordKoMean: beforeInitTables.wordKoMean(db),
+
+    WordEn: beforeInitTables.wordEn(db),
+    WordEnMean: beforeInitTables.wordEnMean(db)
   }
+
+  tables.Shop.hasOne(tables.ShopDesc, {
+    foreignKey: 'id'
+  })
+  tables.ShopDesc.belongsTo(tables.Shop)
+
+  tables.WordKo.hasMany(tables.WordKoMean, {
+    foreignKey: 'id'
+  })
+  tables.WordKoMean.belongsTo(tables.WordKo)
+
+  tables.WordEn.hasMany(tables.WordEnMean, {
+    foreignKey: 'id'
+  })
+  tables.WordEnMean.belongsTo(tables.WordEn)
 }
