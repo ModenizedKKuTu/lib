@@ -13,7 +13,7 @@ export default function getRedisClient (options: {
   host: string,
   password: string|undefined,
   port: number
-}) {
+}): Redis.RedisClient {
   if (!options.password) {
     delete options.password
   }

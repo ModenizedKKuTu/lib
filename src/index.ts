@@ -2,7 +2,7 @@ import db from './db'
 import redis from './redis'
 import jwt from './jwt'
 
-export default {
+export {
   db,
   redis,
   jwt
