@@ -9,6 +9,8 @@ import wordKoMean from './word_ko_mean'
 import wordEn from './word_en'
 import wordEnMean from './word_en_mean'
 
+import CWKo from './cw_ko'
+
 export default {
   user,
 
@@ -19,5 +21,7 @@ export default {
   wordKoMean,
 
   wordEn,
-  wordEnMean
+  wordEnMean,
+
+  CWKo
 }

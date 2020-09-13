@@ -34,7 +34,9 @@ export default function db (options: {
     WordKoMean: beforeInitTables.wordKoMean(db),
 
     WordEn: beforeInitTables.wordEn(db),
-    WordEnMean: beforeInitTables.wordEnMean(db)
+    WordEnMean: beforeInitTables.wordEnMean(db),
+
+    CWKo: beforeInitTables.CWKo(db)
   }
 
   tables.Shop.hasOne(tables.ShopDesc, {
@@ -51,4 +53,6 @@ export default function db (options: {
     foreignKey: 'id'
   })
   tables.WordEnMean.belongsTo(tables.WordEn)
+
+  db.sync()
 }
