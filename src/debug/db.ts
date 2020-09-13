@@ -1,4 +1,4 @@
-import db from '../db/index'
+import { db } from '../index'
 import logger from '../logger'
 
 export default function dbTest () {
