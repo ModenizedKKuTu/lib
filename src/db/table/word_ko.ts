@@ -4,7 +4,7 @@ export default function define (db: sequelize) {
   class WordKO extends Model {}
 
   WordKO.init({
-    id: {
+    _id: {
       type: DataTypes.STRING(256),
       primaryKey: true
     },

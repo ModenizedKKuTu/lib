@@ -4,7 +4,7 @@ export default function define (db: sequelize) {
   class User extends Model {}
 
   User.init({
-    id: {
+    _id: {
       allowNull: false,
       primaryKey: true,
       type: DataTypes.STRING(64),

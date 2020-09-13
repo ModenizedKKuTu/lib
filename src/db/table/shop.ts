@@ -4,7 +4,7 @@ export default function define (db: sequelize) {
   class Shop extends Model {}
 
   Shop.init({
-    id: {
+    _id: {
       type: DataTypes.STRING(64),
       primaryKey: true
     },

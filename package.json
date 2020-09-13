@@ -5,7 +5,7 @@
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-    "test": "ts-node ./src/index.ts",
+    "test": "ts-node ./src/debug/index.ts",
     "build": "tsc",
     "lint": "eslint --fix"
   },
@@ -41,7 +41,7 @@
     "connect-redis": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
     "log4js": "^6.3.0",
-    "mysql2": "^2.1.0",
+    "mariadb": "^2.4.2",
     "sequelize": "^6.3.5"
   }
 }

@@ -4,7 +4,7 @@ export default function define (db: sequelize) {
   class WordEN extends Model {}
 
   WordEN.init({
-    id: {
+    _id: {
       type: DataTypes.STRING(256),
       primaryKey: true
     },

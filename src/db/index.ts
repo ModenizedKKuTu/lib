@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize'
+import logger from '../logger'
 import beforeInitTables from './table'
 
 export default function db (options: {
@@ -6,7 +7,9 @@ export default function db (options: {
   username: string,
   password: string,
   host: string
-}) {
+}, timezone: string = 'asia/seoul') {
+  logger.debug(timezone)
+
   const db = new Sequelize(
     options.database,
     options.username,
@@ -16,11 +19,14 @@ export default function db (options: {
       host: options.host,
       logging: false,
       pool: {
-        acquire: 30000,
         idle: 10000,
-        max: 5,
-        min: 0
-      }
+        max: 20,
+        min: 5
+      },
+      dialectOptions: {
+        timezone: timezone
+      },
+      timezone: timezone
     }
   )
 
@@ -39,20 +45,36 @@ export default function db (options: {
     CWKo: beforeInitTables.CWKo(db)
   }
 
+  tables.User.sync()
+  tables.Shop.sync()
+  tables.WordKo.sync()
+  tables.WordEn.sync()
+
   tables.Shop.hasOne(tables.ShopDesc, {
-    foreignKey: 'id'
+    foreignKey: '_id'
   })
-  tables.ShopDesc.belongsTo(tables.Shop)
+  tables.ShopDesc.belongsTo(tables.Shop, {
+    targetKey: '_id',
+    foreignKey: '_id'
+  })
 
   tables.WordKo.hasMany(tables.WordKoMean, {
-    foreignKey: 'id'
+    foreignKey: '_id'
   })
-  tables.WordKoMean.belongsTo(tables.WordKo)
+  tables.WordKoMean.belongsTo(tables.WordKo, {
+    targetKey: '_id',
+    foreignKey: '_id'
+  })
 
   tables.WordEn.hasMany(tables.WordEnMean, {
-    foreignKey: 'id'
+    foreignKey: '_id'
   })
-  tables.WordEnMean.belongsTo(tables.WordEn)
+  tables.WordEnMean.belongsTo(tables.WordEn, {
+    targetKey: '_id',
+    foreignKey: '_id'
+  })
 
   db.sync()
+
+  return db
 }
