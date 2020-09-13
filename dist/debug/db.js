@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __importDefault(require("../db/index"));
+const index_1 = require("../index");
 const logger_1 = __importDefault(require("../logger"));
 function dbTest() {
     try {
-        const database = index_1.default({
+        const database = index_1.db({
             database: 'kkutu',
             host: '127.0.0.1',
             password: 'testpassword',

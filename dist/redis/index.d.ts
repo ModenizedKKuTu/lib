@@ -1,10 +1,7 @@
-/// <reference types="node" />
 import * as Redis from 'redis';
-declare module 'redis' {
-    interface RedisClient extends NodeJS.EventEmitter {
-        getAsync(key: string): Promise<string | null>;
-        setAsync(key: string, value: string, mode?: string, duration?: Number): Promise<any>;
-    }
+export interface INewRedisClient extends Redis.RedisClient {
+    getAsync(key: string): Promise<string | null>;
+    setAsync(key: string, value: string, mode?: string, duration?: Number): Promise<any>;
 }
 export default function getRedisClient(options: {
     db: number;
