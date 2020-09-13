@@ -1,9 +1,8 @@
-import { cwd } from 'process'
 import { Model, Sequelize as sequelize, DataTypes } from 'sequelize'
 
-export default function define (db: sequelize) {
-  class CWKo extends Model {}
+class CWKo extends Model {}
 
+export default function define (db: sequelize) {
   CWKo.init({
     id: {
       type: DataTypes.INTEGER(),

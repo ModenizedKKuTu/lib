@@ -1,8 +1,8 @@
 import { Model, Sequelize as sequelize, DataTypes } from 'sequelize'
 
-export default function define (db: sequelize) {
-  class User extends Model {}
+class User extends Model {}
 
+export default function define (db: sequelize) {
   User.init({
     _id: {
       allowNull: false,

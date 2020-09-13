@@ -1,8 +1,8 @@
 import { Model, Sequelize as sequelize, DataTypes } from 'sequelize'
 
-export default function define (db: sequelize) {
-  class WordEN extends Model {}
+class WordEN extends Model {}
 
+export default function define (db: sequelize) {
   WordEN.init({
     _id: {
       type: DataTypes.STRING(256),

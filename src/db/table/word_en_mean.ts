@@ -1,8 +1,8 @@
 import { Model, Sequelize as sequelize, DataTypes } from 'sequelize'
 
-export default function define (db: sequelize) {
-  class WordENMean extends Model {}
+class WordENMean extends Model {}
 
+export default function define (db: sequelize) {
   WordENMean.init({
     type: {
       type: DataTypes.TEXT()

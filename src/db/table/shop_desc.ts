@@ -1,8 +1,8 @@
 import { Model, Sequelize as sequelize, DataTypes } from 'sequelize'
 
-export default function define (db: sequelize) {
-  class ShopDesc extends Model {}
+class ShopDesc extends Model {}
 
+export default function define (db: sequelize) {
   ShopDesc.init({
     name_ko_KR: {
       type: DataTypes.TEXT()
