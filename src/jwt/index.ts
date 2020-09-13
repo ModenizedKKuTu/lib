@@ -6,7 +6,7 @@ export enum IUserRole {
   User = 'User'
 }
 
-interface IJWTToken {
+export interface IJWTToken {
   id: string,
   authType: string,
   role: IUserRole,
