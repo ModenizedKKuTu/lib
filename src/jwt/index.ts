@@ -33,7 +33,7 @@ class JWTBuilder {
       private: string
     },
     subject: string,
-    maxAge: number
+    maxAge: number|string
   }) {
     this.issuer = options.issuer
     this.privkey = options.key.private
