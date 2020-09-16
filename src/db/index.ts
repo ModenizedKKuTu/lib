@@ -1,15 +1,13 @@
 import { Sequelize } from 'sequelize'
-import logger from '../logger'
 import beforeInitTables from './table'
 
 export default function db (options: {
   database: string,
   username: string,
   password: string,
-  host: string
+  host: string,
+  port: number
 }, timezone: string = 'asia/seoul') {
-  logger.debug(timezone)
-
   const db = new Sequelize(
     options.database,
     options.username,
@@ -17,6 +15,7 @@ export default function db (options: {
     {
       dialect: 'mariadb',
       host: options.host,
+      port: options.port,
       logging: false,
       pool: {
         idle: 10000,
