@@ -38,3 +38,5 @@ export default function define (db: sequelize) {
 
   return Shop
 }
+
+export { Shop }

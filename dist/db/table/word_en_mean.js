@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.WordENMean = void 0;
 const sequelize_1 = require("sequelize");
 class WordENMean extends sequelize_1.Model {
 }
+exports.WordENMean = WordENMean;
 function define(db) {
     WordENMean.init({
         type: {

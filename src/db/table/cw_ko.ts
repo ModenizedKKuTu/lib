@@ -23,3 +23,5 @@ export default function define (db: sequelize) {
 
   return CWKo
 }
+
+export { CWKo }

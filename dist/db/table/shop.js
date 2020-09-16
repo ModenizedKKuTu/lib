@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Shop = void 0;
 const sequelize_1 = require("sequelize");
 class Shop extends sequelize_1.Model {
 }
+exports.Shop = Shop;
 function define(db) {
     Shop.init({
         _id: {

@@ -11,10 +11,10 @@ function dbTest() {
             database: 'kkutu',
             host: '127.0.0.1',
             password: 'testpassword',
-            username: 'kkutu'
+            username: 'kkutu',
+            port: 3306
         });
         logger_1.default.debug('database connect and table make success');
-        database.close();
     }
     catch (error) {
         logger_1.default.error(error);

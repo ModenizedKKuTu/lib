@@ -1,29 +1,29 @@
-import user from './user'
+import User from './user'
 
-import shop from './shop'
-import shopDesc from './shop_desc'
+import Shop from './shop'
+import ShopDesc from './shop_desc'
 
-import wordKo from './word_ko'
-import wordKoMean from './word_ko_mean'
+import WordKo from './word_ko'
+import WordKoMean from './word_ko_mean'
 
-import wordEn from './word_en'
-import wordEnMean from './word_en_mean'
+import WordEn from './word_en'
+import WordEnMean from './word_en_mean'
 
 import CWKo from './cw_ko'
 
 import Session from './session'
 
-export default {
-  user,
+export {
+  User,
 
-  shop,
-  shopDesc,
+  Shop,
+  ShopDesc,
 
-  wordKo,
-  wordKoMean,
+  WordKo,
+  WordKoMean,
 
-  wordEn,
-  wordEnMean,
+  WordEn,
+  WordEnMean,
 
   CWKo,
 

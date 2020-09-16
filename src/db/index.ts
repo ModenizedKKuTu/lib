@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize'
-import beforeInitTables from './table'
+import * as beforeInitTables from './table'
 
 export default function db (options: {
   database: string,
@@ -30,16 +30,16 @@ export default function db (options: {
   )
 
   const tables = {
-    User: beforeInitTables.user(db),
+    User: beforeInitTables.User(db),
 
-    Shop: beforeInitTables.shop(db),
-    ShopDesc: beforeInitTables.shopDesc(db),
+    Shop: beforeInitTables.Shop(db),
+    ShopDesc: beforeInitTables.ShopDesc(db),
 
-    WordKo: beforeInitTables.wordKo(db),
-    WordKoMean: beforeInitTables.wordKoMean(db),
+    WordKo: beforeInitTables.WordKo(db),
+    WordKoMean: beforeInitTables.WordKoMean(db),
 
-    WordEn: beforeInitTables.wordEn(db),
-    WordEnMean: beforeInitTables.wordEnMean(db),
+    WordEn: beforeInitTables.WordEn(db),
+    WordEnMean: beforeInitTables.WordEnMean(db),
 
     CWKo: beforeInitTables.CWKo(db),
 

@@ -26,3 +26,5 @@ export default function define (db: sequelize) {
 
   return WordENMean
 }
+
+export { WordENMean }

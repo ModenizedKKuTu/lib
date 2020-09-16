@@ -35,3 +35,5 @@ export default function define (db: sequelize) {
 
   return WordEN
 }
+
+export { WordEN }

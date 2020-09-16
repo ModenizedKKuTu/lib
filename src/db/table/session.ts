@@ -22,3 +22,5 @@ export default function define (db: sequelize) {
 
   return Session
 }
+
+export { Session }

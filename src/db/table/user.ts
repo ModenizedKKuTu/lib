@@ -64,3 +64,5 @@ export default function define (db: sequelize) {
 
   return User
 }
+
+export { User }
