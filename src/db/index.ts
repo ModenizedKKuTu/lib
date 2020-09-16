@@ -42,7 +42,9 @@ export default function db (options: {
     WordEn: beforeInitTables.wordEn(db),
     WordEnMean: beforeInitTables.wordEnMean(db),
 
-    CWKo: beforeInitTables.CWKo(db)
+    CWKo: beforeInitTables.CWKo(db),
+
+    Session: beforeInitTables.Session(db)
   }
 
   tables.User.sync()
@@ -76,5 +78,5 @@ export default function db (options: {
 
   db.sync()
 
-  return db
+  return tables
 }

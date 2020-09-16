@@ -11,6 +11,8 @@ import wordEnMean from './word_en_mean'
 
 import CWKo from './cw_ko'
 
+import Session from './session'
+
 export default {
   user,
 
@@ -23,5 +25,7 @@ export default {
   wordEn,
   wordEnMean,
 
-  CWKo
+  CWKo,
+
+  Session
 }
