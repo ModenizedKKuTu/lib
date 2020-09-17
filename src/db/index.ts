@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 import * as beforeInitTables from './table'
 
-export default function db (options: {
+export default async function db (options: {
   database: string,
   username: string,
   password: string,
@@ -46,10 +46,10 @@ export default function db (options: {
     Session: beforeInitTables.Session(db)
   }
 
-  tables.User.sync()
-  tables.Shop.sync()
-  tables.WordKo.sync()
-  tables.WordEn.sync()
+  await tables.User.sync()
+  await tables.Shop.sync()
+  await tables.WordKo.sync()
+  await tables.WordEn.sync()
 
   tables.Shop.hasOne(tables.ShopDesc, {
     foreignKey: '_id'
@@ -75,7 +75,7 @@ export default function db (options: {
     foreignKey: '_id'
   })
 
-  db.sync()
+  await db.sync()
 
   return tables
 }

@@ -21,7 +21,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const beforeInitTables = __importStar(require("./table"));
-function db(options, timezone = 'asia/seoul') {
+async function db(options, timezone = 'asia/seoul') {
     const db = new sequelize_1.Sequelize(options.database, options.username, options.password, {
         dialect: 'mariadb',
         host: options.host,
@@ -48,10 +48,10 @@ function db(options, timezone = 'asia/seoul') {
         CWKo: beforeInitTables.CWKo(db),
         Session: beforeInitTables.Session(db)
     };
-    tables.User.sync();
-    tables.Shop.sync();
-    tables.WordKo.sync();
-    tables.WordEn.sync();
+    await tables.User.sync();
+    await tables.Shop.sync();
+    await tables.WordKo.sync();
+    await tables.WordEn.sync();
     tables.Shop.hasOne(tables.ShopDesc, {
         foreignKey: '_id'
     });
@@ -73,7 +73,7 @@ function db(options, timezone = 'asia/seoul') {
         targetKey: '_id',
         foreignKey: '_id'
     });
-    db.sync();
+    await db.sync();
     return tables;
 }
 exports.default = db;

@@ -1,10 +1,10 @@
 import { db } from '../index'
 import logger from '../logger'
 
-export default function dbTest () {
+export default async function dbTest () {
   try {
-    const database = db({
-      database: 'kkutu',
+    const database = await db({
+      database: 'test',
       host: '127.0.0.1',
       password: 'testpassword',
       username: 'kkutu',
@@ -12,6 +12,8 @@ export default function dbTest () {
     })
 
     logger.debug('database connect and table make success')
+
+    return
   } catch (error) {
     logger.error(error)
   }

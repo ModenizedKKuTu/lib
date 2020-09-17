@@ -1,1 +1,1 @@
-export default function dbTest(): void;
+export default function dbTest(): Promise<void>;

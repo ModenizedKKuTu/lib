@@ -4,7 +4,7 @@ export default function db(options: {
     password: string;
     host: string;
     port: number;
-}, timezone?: string): {
+}, timezone?: string): Promise<{
     User: typeof import("./table/user").User;
     Shop: typeof import("./table/shop").Shop;
     ShopDesc: typeof import("./table/shop_desc").ShopDesc;
@@ -14,4 +14,4 @@ export default function db(options: {
     WordEnMean: typeof import("./table/word_en_mean").WordENMean;
     CWKo: typeof import("./table/cw_ko").CWKo;
     Session: typeof import("./table/session").Session;
-};
+}>;
