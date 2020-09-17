@@ -13,7 +13,7 @@ function define(db) {
             type: sequelize_1.DataTypes.STRING(64),
             unique: true
         },
-        autyType: {
+        authType: {
             allowNull: false,
             type: sequelize_1.DataTypes.STRING(20)
         },

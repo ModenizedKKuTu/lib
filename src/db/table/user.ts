@@ -10,7 +10,7 @@ export default function define (db: sequelize) {
       type: DataTypes.STRING(64),
       unique: true
     },
-    autyType: {
+    authType: {
       allowNull: false,
       type: DataTypes.STRING(20)
     },
