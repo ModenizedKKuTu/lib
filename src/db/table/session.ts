@@ -1,4 +1,4 @@
-import { Model, Sequelize as sequelize, DataTypes } from 'sequelize'
+import { Model, Sequelize as sequelize, DataTypes } from 'Sequelize'
 
 class Session extends Model {}
 

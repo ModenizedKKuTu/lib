@@ -51,6 +51,7 @@ class JWTBuilder {
       subject: this.subject
     }
     const result = await this._createJWT(payload, this.privkey, options)
+
     return result
   }
 
@@ -62,13 +63,14 @@ class JWTBuilder {
       maxAge: this.maxAge
     }
     const result = await this._verifyJWT(token, this.publkey, options)
+
     return result
   }
 
   private _createJWT (payload: object, secret: any, options: object): Promise<string> {
     return new Promise((resolve, reject) => {
       jwt.sign(payload, secret, options, (error, token) => {
-        if (error) reject(error)
+        if (error || !token) reject(error)
         else resolve(token)
       })
     })

@@ -1,4 +1,4 @@
-import { Model, Sequelize as sequelize, DataTypes } from 'sequelize'
+import { Model, Sequelize as sequelize, DataTypes } from 'Sequelize'
 
 class User extends Model {}
 
@@ -25,7 +25,8 @@ export default function define (db: sequelize) {
     },
     lastLogin: {
       allowNull: false,
-      type: DataTypes.DATE()
+      type: DataTypes.DATE(),
+      defaultValue: DataTypes.NOW
     },
     box: {
       allowNull: true,

@@ -1,4 +1,4 @@
-import { Model, Sequelize as sequelize, DataTypes } from 'sequelize'
+import { Model, Sequelize as sequelize, DataTypes } from 'Sequelize'
 
 class WordKO extends Model {}
 
@@ -22,6 +22,7 @@ export default function define (db: sequelize) {
     sequelize: db,
     timestamps: false,
     underscored: false,
+    freezeTableName: true,
     modelName: 'kkutu_ko'
   })
 

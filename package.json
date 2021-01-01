@@ -42,7 +42,7 @@
     "bluebird": "^3.7.2",
     "jsonwebtoken": "^8.5.1",
     "log4js": "^6.3.0",
-    "mariadb": "^2.4.2",
+    "mariadb": "^2.5.2",
     "redis": "^3.0.2",
     "sequelize": "^6.3.5"
   }

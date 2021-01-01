@@ -1,4 +1,4 @@
-import { Sequelize } from 'sequelize'
+import { Sequelize } from 'Sequelize'
 import * as beforeInitTables from './table'
 
 export default async function db (options: {
@@ -22,8 +22,11 @@ export default async function db (options: {
         max: 20,
         min: 5
       },
+      define: {
+        collate: 'utf8mb4_bin',
+        charset: 'utf8mb4'
+      },
       dialectOptions: {
-        timezone: timezone
       },
       timezone: timezone
     }
@@ -45,6 +48,8 @@ export default async function db (options: {
 
     Session: beforeInitTables.Session(db)
   }
+
+  db.authenticate()
 
   await tables.User.sync()
   await tables.Shop.sync()
@@ -77,5 +82,8 @@ export default async function db (options: {
 
   await db.sync()
 
-  return tables
+  return {
+    db,
+    tables
+  }
 }
