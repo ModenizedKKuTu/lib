@@ -46,3 +46,39 @@ export namespace ResponseGameSubscription {
   }
 }
 
+export class RequestEndGameSubscription extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): RequestEndGameSubscription;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RequestEndGameSubscription.AsObject;
+  static toObject(includeInstance: boolean, msg: RequestEndGameSubscription): RequestEndGameSubscription.AsObject;
+  static serializeBinaryToWriter(message: RequestEndGameSubscription, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RequestEndGameSubscription;
+  static deserializeBinaryFromReader(message: RequestEndGameSubscription, reader: jspb.BinaryReader): RequestEndGameSubscription;
+}
+
+export namespace RequestEndGameSubscription {
+  export type AsObject = {
+    key: string,
+  }
+}
+
+export class ResponseEndGameSubscription extends jspb.Message {
+  getResponsetime(): number;
+  setResponsetime(value: number): ResponseEndGameSubscription;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResponseEndGameSubscription.AsObject;
+  static toObject(includeInstance: boolean, msg: ResponseEndGameSubscription): ResponseEndGameSubscription.AsObject;
+  static serializeBinaryToWriter(message: ResponseEndGameSubscription, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResponseEndGameSubscription;
+  static deserializeBinaryFromReader(message: ResponseEndGameSubscription, reader: jspb.BinaryReader): ResponseEndGameSubscription;
+}
+
+export namespace ResponseEndGameSubscription {
+  export type AsObject = {
+    responsetime: number,
+  }
+}
+

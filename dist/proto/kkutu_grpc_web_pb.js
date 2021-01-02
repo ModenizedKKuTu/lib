@@ -146,5 +146,80 @@ proto.kkutu.game.KKuTuPromiseClient.prototype.gameSubscription =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.kkutu.game.RequestEndGameSubscription,
+ *   !proto.kkutu.game.ResponseEndGameSubscription>}
+ */
+const methodDescriptor_KKuTu_EndGameSubscription = new grpc.web.MethodDescriptor(
+  '/kkutu.game.KKuTu/EndGameSubscription',
+  grpc.web.MethodType.SERVER_STREAMING,
+  proto.kkutu.game.RequestEndGameSubscription,
+  proto.kkutu.game.ResponseEndGameSubscription,
+  /**
+   * @param {!proto.kkutu.game.RequestEndGameSubscription} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.kkutu.game.ResponseEndGameSubscription.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.kkutu.game.RequestEndGameSubscription,
+ *   !proto.kkutu.game.ResponseEndGameSubscription>}
+ */
+const methodInfo_KKuTu_EndGameSubscription = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.kkutu.game.ResponseEndGameSubscription,
+  /**
+   * @param {!proto.kkutu.game.RequestEndGameSubscription} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.kkutu.game.ResponseEndGameSubscription.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.kkutu.game.RequestEndGameSubscription} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.kkutu.game.ResponseEndGameSubscription>}
+ *     The XHR Node Readable Stream
+ */
+proto.kkutu.game.KKuTuClient.prototype.endGameSubscription =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/kkutu.game.KKuTu/EndGameSubscription',
+      request,
+      metadata || {},
+      methodDescriptor_KKuTu_EndGameSubscription);
+};
+
+
+/**
+ * @param {!proto.kkutu.game.RequestEndGameSubscription} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.kkutu.game.ResponseEndGameSubscription>}
+ *     The XHR Node Readable Stream
+ */
+proto.kkutu.game.KKuTuPromiseClient.prototype.endGameSubscription =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/kkutu.game.KKuTu/EndGameSubscription',
+      request,
+      metadata || {},
+      methodDescriptor_KKuTu_EndGameSubscription);
+};
+
+
 module.exports = proto.kkutu.game;
 

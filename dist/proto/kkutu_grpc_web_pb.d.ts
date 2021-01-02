@@ -13,6 +13,11 @@ export class KKuTuClient {
     metadata?: grpcWeb.Metadata
   ): grpcWeb.ClientReadableStream<kkutu_pb.ResponseGameSubscription>;
 
+  endGameSubscription(
+    request: kkutu_pb.RequestEndGameSubscription,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<kkutu_pb.ResponseEndGameSubscription>;
+
 }
 
 export class KKuTuPromiseClient {
@@ -24,6 +29,11 @@ export class KKuTuPromiseClient {
     request: kkutu_pb.RequestGameSubscription,
     metadata?: grpcWeb.Metadata
   ): grpcWeb.ClientReadableStream<kkutu_pb.ResponseGameSubscription>;
+
+  endGameSubscription(
+    request: kkutu_pb.RequestEndGameSubscription,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<kkutu_pb.ResponseEndGameSubscription>;
 
 }
 
