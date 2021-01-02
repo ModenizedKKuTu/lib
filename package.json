@@ -22,6 +22,7 @@
   "homepage": "https://github.com/ModenizedKKuTu/lib#readme",
   "devDependencies": {
     "@types/bluebird": "^3.5.32",
+    "@types/google-protobuf": "^3.7.4",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/log4js": "^2.3.5",
     "@types/node": "^14.10.1",
@@ -40,6 +41,8 @@
     "@types/redis": "^2.8.27",
     "@types/validator": "^13.1.0",
     "bluebird": "^3.7.2",
+    "google-protobuf": "^3.14.0",
+    "grpc-web": "^1.2.1",
     "jsonwebtoken": "^8.5.1",
     "log4js": "^6.3.0",
     "mariadb": "^2.5.2",

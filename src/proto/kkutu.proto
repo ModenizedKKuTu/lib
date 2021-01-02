@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package kkutu.game;
+
+service KKuTu {
+    rpc GameSubscription(RequestGameSubscription) returns (stream ResponseGameSubscription) {}
+}
+
+message RequestGameSubscription {
+    string key = 1;
+}
+
+message ResponseGameSubscription {
+    string messageType = 1;
+    double responseTime = 2;
+    string message = 3;
+}
