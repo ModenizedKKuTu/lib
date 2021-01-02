@@ -15,7 +15,9 @@ export class KKuTuClient {
 
   endGameSubscription(
     request: kkutu_pb.RequestEndGameSubscription,
-    metadata?: grpcWeb.Metadata
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: kkutu_pb.ResponseEndGameSubscription) => void
   ): grpcWeb.ClientReadableStream<kkutu_pb.ResponseEndGameSubscription>;
 
 }
@@ -33,7 +35,7 @@ export class KKuTuPromiseClient {
   endGameSubscription(
     request: kkutu_pb.RequestEndGameSubscription,
     metadata?: grpcWeb.Metadata
-  ): grpcWeb.ClientReadableStream<kkutu_pb.ResponseEndGameSubscription>;
+  ): Promise<kkutu_pb.ResponseEndGameSubscription>;
 
 }
 

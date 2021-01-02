@@ -154,7 +154,7 @@ proto.kkutu.game.KKuTuPromiseClient.prototype.gameSubscription =
  */
 const methodDescriptor_KKuTu_EndGameSubscription = new grpc.web.MethodDescriptor(
   '/kkutu.game.KKuTu/EndGameSubscription',
-  grpc.web.MethodType.SERVER_STREAMING,
+  grpc.web.MethodType.UNARY,
   proto.kkutu.game.RequestEndGameSubscription,
   proto.kkutu.game.ResponseEndGameSubscription,
   /**
@@ -188,32 +188,37 @@ const methodInfo_KKuTu_EndGameSubscription = new grpc.web.AbstractClientBase.Met
 
 
 /**
- * @param {!proto.kkutu.game.RequestEndGameSubscription} request The request proto
+ * @param {!proto.kkutu.game.RequestEndGameSubscription} request The
+ *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.kkutu.game.ResponseEndGameSubscription>}
+ * @param {function(?grpc.web.Error, ?proto.kkutu.game.ResponseEndGameSubscription)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.kkutu.game.ResponseEndGameSubscription>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.kkutu.game.KKuTuClient.prototype.endGameSubscription =
-    function(request, metadata) {
-  return this.client_.serverStreaming(this.hostname_ +
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
       '/kkutu.game.KKuTu/EndGameSubscription',
       request,
       metadata || {},
-      methodDescriptor_KKuTu_EndGameSubscription);
+      methodDescriptor_KKuTu_EndGameSubscription,
+      callback);
 };
 
 
 /**
- * @param {!proto.kkutu.game.RequestEndGameSubscription} request The request proto
+ * @param {!proto.kkutu.game.RequestEndGameSubscription} request The
+ *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.kkutu.game.ResponseEndGameSubscription>}
- *     The XHR Node Readable Stream
+ * @return {!Promise<!proto.kkutu.game.ResponseEndGameSubscription>}
+ *     Promise that resolves to the response
  */
 proto.kkutu.game.KKuTuPromiseClient.prototype.endGameSubscription =
     function(request, metadata) {
-  return this.client_.serverStreaming(this.hostname_ +
+  return this.client_.unaryCall(this.hostname_ +
       '/kkutu.game.KKuTu/EndGameSubscription',
       request,
       metadata || {},

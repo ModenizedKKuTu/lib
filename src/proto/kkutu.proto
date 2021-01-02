@@ -4,7 +4,7 @@ package kkutu.game;
 
 service KKuTu {
     rpc GameSubscription(RequestGameSubscription) returns (stream ResponseGameSubscription) {}
-    rpc EndGameSubscription(RequestEndGameSubscription) returns (stream ResponseEndGameSubscription) {}
+    rpc EndGameSubscription(RequestEndGameSubscription) returns (ResponseEndGameSubscription) {}
 }
 
 message RequestGameSubscription {
